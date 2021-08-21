@@ -1,0 +1,47 @@
+.container{
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    flex-direction: column;
+    /* border: 2px solid red; */
+    margin-top: 80px
+}
+.topel{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* border: 1px solid brown; */
+    padding-left: 16.5rem;
+    padding-right: 16.5rem;
+    padding-top: 0.3rem;
+    background-color:var(--twitter-background);
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.2), 0 1px 2px 0 rgba(185, 174, 174, 0.19);
+
+    margin-top: 1rem;
+}
+
+.infos{
+    display: flex;
+    /* max-width: 800px; */
+    /* align-items: flex-start; */
+    justify-content: space-between;
+    margin-top: 1.2rem;
+    
+}
+.info{
+    padding: 50px;
+    align-self: flex-start;
+    margin-right: 5px;
+}
+
+.feeds{
+    padding-left: 6rem;
+    padding-right: 6rem;
+}
+.avatar{
+    height: 80px !important;
+    width: 80px !important;
+    margin-bottom: 0.4rem;
+
+}
