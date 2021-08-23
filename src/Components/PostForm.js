@@ -70,7 +70,7 @@ const PostForm = (props) => {
                 <textarea onChange={(e)=>{setPost(e.target.value)}} name="post" id="exampleFormControlTextarea1" value={post} className="form-control" cols="40" rows="3"></textarea>
                 
                 <div className='actions'>
-                    <label for='postphoto'>
+                    <label htmlFor='postphoto'>
                         <InsertPhotoIcon />
                     </label>
                     <input onChange={fileUpload} type="file" name="photo" id="postphoto" accept="image/*" />

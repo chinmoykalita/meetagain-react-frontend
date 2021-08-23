@@ -27,7 +27,6 @@ const ProfilePage = () => {
     useEffect(()=>{
         getTheUser();
         getTheFeeds();
-        console.log(feeds);
     }, [])
 
 

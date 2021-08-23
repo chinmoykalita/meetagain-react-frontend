@@ -42,8 +42,8 @@ const Header = (props) => {
         <Link className='link_style' to='/'><h5>People</h5></Link>
         {/* account dropdown */}
         {(user.id)?
-        <div class="dropdown">
-          <h5 className="dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown">
+        <div className="dropdown">
+          <h5 className="dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" >
             <Avatar 
               src={user.profile[0].photo}
               className='current_user_avatar'
@@ -51,10 +51,10 @@ const Header = (props) => {
               {`${user.first_name} ${user.last_name}`}
               </h5>
       
-          <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+          <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
             <li><Link to={`/${user.username}`} className="dropdown-item">Profile</Link></li>
-            <li><Link class="dropdown-item">Account Management</Link></li>
-            <li><a onClick={logOut} class="dropdown-item" href="#">Logout</a></li>
+            <li><Link className="dropdown-item">Account Management</Link></li>
+            <li><a onClick={logOut} className="dropdown-item">Logout</a></li>
           </ul>
 
         </div>: <Link className='link_style' to='/signin'><h5>Login</h5></Link>}
@@ -66,7 +66,7 @@ const Header = (props) => {
         <input type="text" name="searchbar" id="searchbar" placeholder='search people and posts!'/>
         {/* search bar for mobile devices */}
         
-        <SearchIcon className='sicon' data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample"/>
+        <SearchIcon className='sicon' data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="collapseExample"/>
         
 
       </div>

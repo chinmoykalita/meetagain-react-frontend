@@ -27,7 +27,7 @@ const Stories = (props) => {
         <div className='boxpost'>
 
             <div className="head">
-                <Link className='link' to={`/profile/${props.username}`}><Avatar src={props.image} /></Link>
+                <Link className='link' to={props.username&&`/profile/${props.username}`}><Avatar src={props.image} /></Link>
                 <div className="user_who_posted">
                     <Link className='link' to={`/profile/${props.username}`}><p><b>{props.name}</b></p></Link>
                     <p>{props.date}</p>

@@ -3,16 +3,13 @@ import { Link } from 'react-router-dom';
 
 function Home() {
     return(
-        <div>
-            <br />
-            <br />
-            <br />
-
-            <h4 className='text-center my-3'>Welcome to Cwitter: For coders and Darrangians</h4>
+        <div class="container">
+            <h4 className='text-center'>Welcome to MeetAgain Community</h4>
             <br />
             <Link className='text-center my-3' to='/feeds'>
-                <button className='btn btn-success'>Join the community</button>
+                <button className='btn btn-success text-center'>Join the community</button>
             </Link>
+            
         </div>
     )
 }
