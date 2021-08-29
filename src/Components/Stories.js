@@ -38,9 +38,8 @@ const Stories = (props) => {
             <div className="post_content">
                 <p>{props.text}
                 </p>
-                {props.pimg?
-                <img src={props.pimg} alt="" srcset="" />
-                :<></>}
+                {props.pimg &&
+                <img src={props.pimg} alt="" srcset="" />}
             </div>
 
             <div className="action_buttons">
@@ -66,9 +65,7 @@ const Stories = (props) => {
 
 
 
-
-
-        </>
+      </>
     )
 }
 

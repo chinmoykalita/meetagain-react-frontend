@@ -36,7 +36,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function SignIn() {
+export default function SignIn(props) {
   const classes = useStyles();
   const [username, setUsername] = useState();
   const [password, setPassword] = useState();
@@ -52,7 +52,7 @@ export default function SignIn() {
 
   const handleLogin = (e)=>{
     e.preventDefault();
-    fetch('http://localhost:8000/api/auth/login/', {
+    fetch(`${props.API_URL}/auth/login/`, {
       method: 'POST',
       body: JSON.stringify(data),
       headers: {"Content-type": "application/json", "Accept": "application/json"}

@@ -5,23 +5,22 @@ import axios from 'axios';
 import PostForm from './PostForm';
 import { Link } from 'react-router-dom';
 
-const URL = 'http://localhost:8000/api';
 
-const Feeds = ({isAuth}) => {
+const Feeds = (props) => {
     const [data, setData] = useState([]);
     const [user, setUser] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
 
     const getPostData = async ()=>{
-        const res = await axios.get(`${URL}/feeds/`);
-        const res2 = await axios.get(`${URL}/users/`);
+        const res = await axios.get(`${props.API_URL}/feeds/`);
+        const res2 = await axios.get(`${props.API_URL}/users/`);
         setData(res.data);
         setUser(res2.data);
         setIsLoading(false)
     }
 
     useEffect(() => {
-        getPostData('')
+        getPostData()
     }, [])
 
     
@@ -48,7 +47,7 @@ const Feeds = ({isAuth}) => {
         <div className='post'>
             <div>
                 <div className="postbox">
-                    <PostForm callback={getPostData} URL={URL} isAuth={isAuth} />
+                    <PostForm callback={getPostData} URL={props.API_URL} isAuth={props.isAuth} />
                 </div>
                 <h2>Feeds</h2>
                 {isLoading?

@@ -11,7 +11,6 @@ import Container from '@material-ui/core/Container';
 import {Link as Linked } from 'react-router-dom';
 import { storeToken } from './Auth';
 
-const URL = 'http://localhost:8000/api';
 
 const useStyles = makeStyles((theme) => ({
   
@@ -34,7 +33,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function SignUp() {
+export default function SignUp(props) {
   const classes = useStyles();
 
   
@@ -79,7 +78,7 @@ export default function SignUp() {
   // handle signup
   function HandleSubmit(e){
     e.preventDefault();
-    fetch(`${URL}/auth/register/`, {
+    fetch(`${props.API_URL}/auth/register/`, {
         method: "POST",
         body: JSON.stringify(userdata),
         headers: {"Content-type": "application/json", "Accept": "application/json"}

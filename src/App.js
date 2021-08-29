@@ -20,6 +20,7 @@ import axios from 'axios';
 
 // using context api to pass the current user to the other children componants to avoid prop drilling
 const CurrentUser = createContext({})
+const API_URL = '/api';
 
 function App() {
 
@@ -30,7 +31,7 @@ function App() {
     // parsing the auth token from cookies
     const token = getToken();
     if(token){
-    const res = await axios('http://localhost:8000/api/auth/current_user/',{
+    const res = await axios(`${API_URL}/auth/current_user/`,{
       method: 'POST',
       headers: {
           "Content-type": "application/json", "Accept": "application/json",
@@ -66,25 +67,25 @@ function App() {
       </Route>
 
       <Route path='/feeds'>
-        <Feeds />
+        <Feeds API_URL={API_URL}/>
       </Route>
 
       <Route path="/signup">
         {(!cuser.id)?
-        <SignUp />
+        <SignUp API_URL={API_URL}/>
         :<Redirect to='/feeds' />
         }        
       </Route>
 
       <Route path="/signin">
         {(!cuser.id)?
-        <SignIn />:
+        <SignIn API_URL={API_URL}/>:
         <Redirect to='/feeds' />
         }
       </Route>
 
       <Route path="/profile/:id">
-        <ProfilePage />
+        <ProfilePage API_URL={API_URL}/>
       </Route>
 
       {/* testing route   */}
